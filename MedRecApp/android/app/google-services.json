@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "614167529014",
+    "project_id": "medrec-71d4c"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614167529014:android:b1c768e0a805e152",
+        "android_client_info": {
+          "package_name": "com.ionicframework.medrecapp916546"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "614167529014-5s6hrjmfckjd8rqq1mn3eb312kbmqj7f.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "614167529014-a7vmk454vg4bsok683e86o99e96akr1u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ionicframework.medrecapp916546",
+            "certificate_hash": "20d00fe02c6d5c16290bf1f26e641987028cb7ad"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKsEcWiekZNefyEghU5cfkapsVSX5uruc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614167529014:android:a751fc7c9fcbbaf5",
+        "android_client_info": {
+          "package_name": "com.medrecapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "614167529014-mmjr7j9lf1tjbegpn0rfjqlctp5ke19h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.medrecapp",
+            "certificate_hash": "20d00fe02c6d5c16290bf1f26e641987028cb7ad"
+          }
+        },
+        {
+          "client_id": "614167529014-5s6hrjmfckjd8rqq1mn3eb312kbmqj7f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKsEcWiekZNefyEghU5cfkapsVSX5uruc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
