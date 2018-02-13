@@ -1,0 +1,1 @@
+C:\Users\ahmad\AppData\Local\Android\Sdk\emulator\emulator -avd Pixel_2_XL_API_27 -netdelay none -netspeed full
