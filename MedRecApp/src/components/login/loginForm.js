@@ -53,7 +53,7 @@ export default class LoginForm extends Component<{}> {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 0
+        padding: 0 
     }, 
     buttonContainer: {
         padding: 0, 
