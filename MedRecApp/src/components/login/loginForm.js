@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 import {Actions} from 'react-native-router-flux';
-
+ 
 export default class LoginForm extends Component<{}> {
     componentWillMount(){
         GoogleSignin.hasPlayServices({ autoResolve: true });
@@ -57,8 +57,7 @@ const styles = StyleSheet.create({
     }, 
     buttonContainer: {
         padding: 0, 
-        flex: 1,
-        flexDirection: 'row'
+        flex: 1
     }, 
     input: {
         height: 50,
@@ -69,8 +68,8 @@ const styles = StyleSheet.create({
         fontSize: 18 
     },
     buttonProps: {
-        width: 100,
-        height: 100,
+        width: 300,
+        height: 40,
         borderRadius: 10,
         backgroundColor: '#3498DB',
         marginBottom: 10,

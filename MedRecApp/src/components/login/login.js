@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#1E824C',
+    backgroundColor: '#81b71a',
   },
   logoContainer: {
     alignItems: 'center',

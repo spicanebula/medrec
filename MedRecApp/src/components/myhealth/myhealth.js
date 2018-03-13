@@ -26,7 +26,7 @@ var myhealth = TabNavigator({
     scrollEnabled: true,
     activeTintColor: 'black',
     style:{
-      backgroundColor:'green',
+      backgroundColor:'#81b71a',
       //borderTopWidth:1,
       borderTopColor:'#D3D3D3'
       },
