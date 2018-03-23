@@ -35,7 +35,7 @@ export default class conditions extends Component<{}> {
           {this.renderConditions()}
         </View>
       </ScrollView>
-      <AddButton onPress={() => {Actions.condition_add()}}/>
+      <AddButton onPress={() => {Actions.condition_new()}}/>
       </View>
     );
   }
@@ -212,9 +212,9 @@ const styles = StyleSheet.create({
     width: '98%',
     borderWidth: 1,
     borderColor: 'lightgrey',
-    borderRadius: 4,   
+    borderRadius: 6,   
     shadowOpacity: 4,
-    elevation: 2,
+    elevation: 1,
     backgroundColor : "#0000"
   },
 });

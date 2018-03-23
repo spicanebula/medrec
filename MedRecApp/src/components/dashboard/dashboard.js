@@ -10,18 +10,18 @@ export default class dashboard extends Component<{}> {
     return (
       <View style={styles.container}>
         <View style={styles.top}>
-                <Text style={styles.statsText}>
-                    Age: 44
-                </Text>
-                <Text style={styles.statsText}>
-                    Eye Color: Dark Brown
-                </Text>
-                <Text style={styles.statsText}>
-                    Height: 5'8"
-                </Text>
-                <Text style={styles.statsText}>
-                    Blood Group: O+
-                </Text>
+          <Text style={styles.statsText}>
+              Age: 44
+          </Text>
+          <Text style={styles.statsText}>
+              Eye Color: Dark Brown
+          </Text>
+          <Text style={styles.statsText}>
+              Height: 5'8"
+          </Text>
+          <Text style={styles.statsText}>
+              Blood Group: O+
+          </Text>
         </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.buttonProps} onPress={() => this.show_myhealth()}>

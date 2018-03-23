@@ -5,7 +5,7 @@ import dashboard from './components/dashboard/dashboard';
 import LoginForm from './components/login/login';
 import myhealth from './components/myhealth/myhealth';
 import condition_detail from './components/myhealth/condition_detail';
-import condition_add from './components/myhealth/condition_add';
+import condition_new from './components/myhealth/condition_new';
 
 const router = () => {
 return (
@@ -25,16 +25,16 @@ return (
                     title='MY HEALTH'
                 />
 
-                        <Scene key='condition_detail' component={condition_detail} title='Condition Detail' titleStyle={{fontSize:24}}/>
-                        <Scene 
-                            //rightTitle='Add'
-                            //rightButtonImage={require('./components/icons/plus.png')}
-                            //onRight={ () => { console.log('right tapped!!!') } }
-                            key='condition_add' 
-                            component={condition_add} 
-                            title='Add Condition'
-                            titleStyle={{fontSize:24}}
-                         />
+                <Scene key='condition_detail' component={condition_detail} title='Condition Detail' titleStyle={{fontSize:24}}/>
+                <Scene 
+                    //rightTitle='Add'
+                    //rightButtonImage={require('./components/icons/plus.png')}
+                    //onRight={ () => { console.log('right tapped!!!') } }
+                    key='condition_new' 
+                    component={condition_new} 
+                    title='New Condition'
+                    titleStyle={{fontSize:24}}
+                    />
                
             </Scene>
 
