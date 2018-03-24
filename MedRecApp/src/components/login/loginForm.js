@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import {
   StyleSheet,View, TextInput, Text, TouchableOpacity, StatusBar, Alert
 } from 'react-native';
-import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
+//import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 import {Actions} from 'react-native-router-flux';
  
 export default class LoginForm extends Component<{}> {
     componentWillMount(){
-        GoogleSignin.hasPlayServices({ autoResolve: true });
+       /* GoogleSignin.hasPlayServices({ autoResolve: true });
         GoogleSignin.configure({
             webClientId: '614167529014-5s6hrjmfckjd8rqq1mn3eb312kbmqj7f.apps.googleusercontent.com'
-        });
+        }); */
     }
 
   render() {

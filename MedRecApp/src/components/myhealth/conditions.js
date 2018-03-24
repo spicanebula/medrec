@@ -16,7 +16,7 @@ export default class conditions extends Component<{}> {
   renderConditions(){
     return( this.state.conditions.map((condition,i) => 
           <View style={styles.card} key={condition.name}>
-          <TouchableOpacity onPress={() => this.somefunction(i)}>
+          <TouchableOpacity onPress={() => this.showConditionDetail(i)}>
             <View style={{margin:10}}>
               <Text style={{fontSize:20, color: 'black'}}>{condition.name}</Text>
               <Text style={{fontSize:14, color: 'black'}}>{condition.status}</Text>
@@ -40,161 +40,51 @@ export default class conditions extends Component<{}> {
     );
   }
 
-  somefunction(index){ Actions.condition_detail({ condition: this.state.conditions[index] }); }
-
+  showConditionDetail(index){ Actions.condition_detail({ condition: this.state.conditions[index] }); }
+  
   get_conditions_data(){
     var _arr = [];
     _arr.push(
       {
         "type": "Health Condition",
         "name": "Disorder of lipid metabolism",
+        "relationship": "Self",
         "status": "Active",
+        "provider_fname": "Norton",
+        "provider_lname": "Hospital",
+        "procedure_dt": null,
         "resolved_dt": "02/01/2018",
         "comments": "none"
       },{
         "type": "Surgical History",
         "name": "Fracture",
+        "relationship": "Self",
         "status": "Inactive",
+        "provider_fname": "Norton",
+        "provider_lname": "Hospital",
+        "procedure_dt": "01/01/2017",        
         "resolved_dt": "12/01/2017",
         "comments": "none"
       },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
+        "type": "Family Health Condition",
+        "name": "High blood pressure",
+        "relationship": "Father",
         "status": "Active",
+        "provider_fname": "Norton",
+        "provider_lname": "Hospital",
+        "procedure_dt": "01/01/2017",  
         "resolved_dt": "12/01/2017",
         "comments": "none"
       },{
-        "type": "Surgical History",
-        "name": "Fracture",
-        "status": "Inactive",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
+        "type": "Personal Health Condition",
+        "name": "Headache without coffee",
+        "relationship": "Self",
         "status": "Active",
+        "provider_fname": "Norton",
+        "provider_lname": "Hospital",
+        "procedure_dt": "01/01/2017",  
         "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Fracture",
-        "status": "Inactive",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
-        "status": "Active",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Fracture",
-        "status": "Inactive",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
-        "status": "Active",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Fracture",
-        "status": "Inactive",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
-        "status": "Active",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Fracture",
-        "status": "Inactive",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
-        "status": "Active",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Fracture",
-        "status": "Inactive",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
-        "status": "Active",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Fracture",
-        "status": "Inactive",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
-        "status": "Active",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Fracture",
-        "status": "Inactive",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
-        "status": "Active",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Fracture",
-        "status": "Inactive",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
-        "status": "Active",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Fracture",
-        "status": "Inactive",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
-        "status": "Active",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Fracture",
-        "status": "Inactive",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
-      },{
-        "type": "Surgical History",
-        "name": "Hair Line Fracture",
-        "status": "Active",
-        "resolved_dt": "12/01/2017",
-        "comments": "none"
+        "comments": "I get headache all day if skip coffee in the morning"
       }
     );
     return _arr;
