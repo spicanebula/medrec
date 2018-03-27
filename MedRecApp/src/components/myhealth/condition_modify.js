@@ -4,22 +4,35 @@ import {Actions} from 'react-native-router-flux';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import AddButton from '../common/add_button';
 
-export default class condition_new extends Component<{}> {
+export default class condition_modify extends Component<{}> {
   constructor(){
     super();
     this.state = { 
-      condition: { 
-                    "type": "Select Type", "name": null, "relationship": null, "status": null, "provider_fname": null,
-                    "provider_lname": null, "procedure_dt": null, "resolved_dt": null, "comments": null
-                  }, 
+      condition: null, 
       condition_types: ["Select Type", "Health Condition", "Surgical History", "Family Health Condition", "Personal Health Condition"],
       relations: ["Select Relationship", "Self", "Father", "Mother", "Son", "Daughter", "Wife"],
       condition_status: ["Unknow", "Active", "Inactive", "Resolved", "Denied"],
       isDatePickerVisible:false,
       rendering_flags: { name: false, relationship: false, provider_name: false, resolved_dt: false, procedure_dt: false, status: false, comments: false, save_button: false }
     };
+    
   }
 
+  _setRenderingFlags(condition_type){
+    var flags = this.state.rendering_flags;
+    if(condition_type == 'Select Type'){
+      flags = { name: false, relationship: false, provider_name: false, resolved_dt: false, procedure_dt: false, status: false, comments: false, save_button: false };
+    }else if(condition_type == 'Health Condition'){
+      flags = { name: true, relationship: false, provider_name: false, resolved_dt: true, procedure_dt: false, status: true, comments: true, save_button: true };
+    }else if(condition_type == 'Surgical History'){
+      flags = { name: true, relationship: false, provider_name: true, resolved_dt: false, procedure_dt: true, status: true, comments: true, save_button: true };
+    }else if(condition_type == 'Family Health Condition'){
+      flags = { name: true, relationship: true, provider_name: false, resolved_dt: false, procedure_dt: false, status: true, comments: true, save_button: true };
+    }else if(condition_type == 'Personal Health Condition'){
+      flags = { name: true, relationship: false, provider_name: false, resolved_dt: false, procedure_dt: false, status: true, comments: true, save_button: true };
+    }
+    this.setState({ rendering_flags: flags });
+  }
 
   _showDateTimePicker = () => this.setState({ isDatePickerVisible: true });
 
@@ -43,22 +56,6 @@ export default class condition_new extends Component<{}> {
     Actions.refresh();
   };
 
-  _setRenderingFlags(condition_type){
-    var flags = this.state.rendering_flags;
-    if(condition_type == 'Select Type'){
-      flags = { name: false, relationship: false, provider_name: false, resolved_dt: false, procedure_dt: false, status: false, comments: false, save_button: false };
-    }else if(condition_type == 'Health Condition'){
-      flags = { name: true, relationship: false, provider_name: false, resolved_dt: true, procedure_dt: false, status: true, comments: true, save_button: true };
-    }else if(condition_type == 'Surgical History'){
-      flags = { name: true, relationship: false, provider_name: true, resolved_dt: false, procedure_dt: true, status: true, comments: true, save_button: true };
-    }else if(condition_type == 'Family Health Condition'){
-      flags = { name: true, relationship: true, provider_name: false, resolved_dt: false, procedure_dt: false, status: true, comments: true, save_button: true };
-    }else if(condition_type == 'Personal Health Condition'){
-      flags = { name: true, relationship: false, provider_name: false, resolved_dt: false, procedure_dt: false, status: true, comments: true, save_button: true };
-    }
-    this.setState({ rendering_flags: flags });
-  }
-
   _handleStatus = (itemValue) => {
     var c = this.state.condition;
     c.status = itemValue;
@@ -72,10 +69,12 @@ export default class condition_new extends Component<{}> {
     this._hideDateTimePicker();
   };
 
-  _handleFormSave = () => {};
+  _handleFormSave = () => { alert(this.props.condition); };
   
   componentWillMount(){
     //this.setState({ condition_types: ["Health Condition", "Surgical History", "Family Health Condition", "Personal Health Condition"] });
+    this.setState({ condition: this.props.condition });
+    this._setRenderingFlags(this.props.condition.type);
   }
 
   _loadRelationshipItems(){
@@ -172,9 +171,9 @@ export default class condition_new extends Component<{}> {
       return(
         <View >
           <Text style={styles.textLable}>Provider First Name:</Text>
-          <TextInput />
+          <TextInput value = {this.state.condition.provider_fname} />
           <Text style={styles.textLable}>Provider Last Name:</Text>
-          <TextInput />
+          <TextInput value = {this.state.condition.provider_fname} />
         </View>
       );
     }else{
@@ -187,7 +186,7 @@ export default class condition_new extends Component<{}> {
       return(
         <View >
           <Text style={styles.textLable}>Name:</Text>
-          <TextInput />
+          <TextInput value={this.state.condition.name}/>
         </View>
       );
     }else{
@@ -200,7 +199,7 @@ export default class condition_new extends Component<{}> {
       return(
         <View >
           <Text style={styles.textLable}>Comments:</Text>
-          <TextInput multiline = {true} numberOfLines = {4} />
+          <TextInput multiline = {true} numberOfLines = {4} value = {this.state.condition.comments} />
         </View>
       );
     }else{

@@ -84,7 +84,7 @@ export default class conditions extends Component<{}> {
         "provider_lname": "Hospital",
         "procedure_dt": "01/01/2017",  
         "resolved_dt": "12/01/2017",
-        "comments": "I get headache all day if skip coffee in the morning"
+        "comments": "I get headache all day when skip morning coffee"
       }
     );
     return _arr;

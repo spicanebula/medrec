@@ -6,6 +6,7 @@ import LoginForm from './components/login/login';
 import myhealth from './components/myhealth/myhealth';
 import condition_detail from './components/myhealth/condition_detail';
 import condition_new from './components/myhealth/condition_new';
+import condition_modify from './components/myhealth/condition_modify';
 
 const router = () => {
 return (
@@ -34,7 +35,16 @@ return (
                     component={condition_new} 
                     title='New Condition'
                     titleStyle={{fontSize:24}}
-                    />
+                />
+                <Scene 
+                    //rightTitle='Add'
+                    //rightButtonImage={require('./components/icons/plus.png')}
+                    //onRight={ () => { console.log('right tapped!!!') } }
+                    key='condition_modify' 
+                    component={condition_modify} 
+                    title='Modify Condition'
+                    titleStyle={{fontSize:24}}
+                />
                
             </Scene>
 
