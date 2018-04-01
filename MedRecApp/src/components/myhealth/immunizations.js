@@ -1,67 +1,103 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, Text, View
+  StyleSheet, Text, View, ScrollView, TouchableOpacity
 } from 'react-native';
+import {Actions} from 'react-native-router-flux';
+import AddButton from '../common/add_button';
 
 export default class immunizations extends Component<{}> {
+
+  state = { immunizations: [] };
+
+  componentWillMount(){
+    //var conditions_arr = get_conditions_data();
+    this.setState({ immunizations: this.get_immunizations_data() });
+  }
+
+  renderImmunizations(){
+    return( this.state.immunizations.map((immunization,i) => 
+          <View style={styles.card} key={immunization.name}>
+          <TouchableOpacity onPress={() => this.showImmunizationDetail(i)}>
+            <View style={{margin:10}}>
+              <Text style={{fontSize:20, color: 'black'}}>{immunization.name}</Text>
+              <Text style={{fontSize:14, color: 'black'}}>{immunization.status}</Text>
+            </View>
+            </TouchableOpacity>
+          </View>
+      )
+    )
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.top}>
-                <Text style={styles.statsText}>
-                    Immunizations
-                </Text>
-        </View>
+      <View>
+        <ScrollView >
+          <View style={styles.container}>
+            {this.renderImmunizations()}
+          </View>
+        </ScrollView>
+        <AddButton onPress={() => {Actions.immunization_new()}}/>
       </View>
     );
   }
+
+  showImmunizationDetail(index){ 
+  console.log("showImmunizationDetail");
+  Actions.immunization_detail({ immunization: this.state.immunizations[index] }); 
+}
+
+get_immunizations_data(){
+  var _arr = [];
+  _arr.push(
+      {
+        "name": "Influenza, Injectable",
+        "immunization_dt": "",
+        "status": "Active",
+        "provider_fname": "Tina",
+        "provider_lname": "Yuan",
+        "comments": "Take for 3 months"
+      },{
+        "name": "Influenza, Injectable",
+        "immunization_dt": "",
+        "status": "Active",
+        "provider_fname": "Tina",
+        "provider_lname": "Yuan",
+        "comments": "Take for 3 months"
+      },{
+        "name": "Influenza, Injectable",
+        "immunization_dt": "",
+        "status": "Active",
+        "provider_fname": "Tina",
+        "provider_lname": "Yuan",
+        "comments": "Take for 3 months"
+      },{
+        "name": "Influenza, Injectable",
+        "immunization_dt": "",
+        "status": "Active",
+        "provider_fname": "Tina",
+        "provider_lname": "Yuan",
+        "comments": "Take for 3 months"
+      }
+    );
+    return _arr;
+  } // function get_medications_data()
+
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
-  },
-  top: {
-    height: '20%',
+    flex: 1,
+    marginTop: 60,
     alignItems: 'center',
-    justifyContent: 'center',
-    //backgroundColor: '#5DADE2',
-    marginTop: 40
   },
-  statsText: {
-    //color: '#ECECEC', 
-    fontSize: 18, 
-    textAlign: 'center'
-  }, 
-  buttonContainer: {
-      padding: 0, 
-      flex: 1,
-      flexDirection: 'row',
-      flexGrow: 1,
-      justifyContent: 'center',
-      marginTop: 20
+  card: {
+    margin: 2,
+    width: '98%',
+    borderWidth: 1,
+    borderColor: 'lightgrey',
+    borderRadius: 6,   
+    shadowOpacity: 4,
+    elevation: 1,
+    backgroundColor : "#0000"
   },
-  buttonProps: {
-      width: 100,
-      height: 100,
-      borderRadius: 10,
-      backgroundColor: 'steelblue',
-      marginBottom: 0,
-      marginTop: 10,
-      marginRight: 10,  
-      padding: 10,
-      justifyContent: 'center', 
-      alignItems: 'center'
-  },
-  buttonText: {
-      textAlign: 'center',
-      color: '#FFFFFF',
-      fontWeight: '700'
-  },
-  formContainer: {
-    alignItems: 'center',
-    flexGrow: 1,
-    justifyContent: 'center',
-    marginTop: 80
-  }
 });

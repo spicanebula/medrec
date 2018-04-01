@@ -20,11 +20,17 @@ export default class condition_new extends Component<{}> {
     };
   }
 
-
   _showDateTimePicker = () => this.setState({ isDatePickerVisible: true });
 
   _hideDateTimePicker = () => this.setState({ isDatePickerVisible: false });
   
+  _handleDatePicked = (date) => {
+    var c = this.state.condition;
+    c.resolved_dt = date.toISOString();
+    this.setState({ condition: c });
+    this._hideDateTimePicker();
+  };
+
   _handleType = (itemValue) => {
     this._setRenderingFlags(itemValue);
     
@@ -63,13 +69,6 @@ export default class condition_new extends Component<{}> {
     var c = this.state.condition;
     c.status = itemValue;
     this.setState({ conditions: c });
-  };
-
-  _handleDatePicked = (date) => {
-    var c = this.state.condition;
-    c.resolved_dt = date.toISOString();
-    this.setState({ condition: c });
-    this._hideDateTimePicker();
   };
 
   _handleFormSave = () => {};

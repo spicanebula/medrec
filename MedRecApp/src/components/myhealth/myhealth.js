@@ -15,9 +15,9 @@ var myhealth = TabNavigator({
   Conditions: { screen: Conditions },
   Medications: { screen: Medications },
   Allergies: { screen: Allergies },
+  Immunizations: { screen: Immunizations },
   Diseases: { screen: Diseases },
   Vitals: { screen: Vitals },
-  Immunizations: { screen: Immunizations },
   Documents: { screen: Documents }
 },{
   tabBarPosition: 'bottom',

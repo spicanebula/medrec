@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, Text, View, ScrollView, TouchableOpacity, TouchableHighlight
+  StyleSheet, Text, View, ScrollView, TouchableOpacity
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import AddButton from '../common/add_button';
